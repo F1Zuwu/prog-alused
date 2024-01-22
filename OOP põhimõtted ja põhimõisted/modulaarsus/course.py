@@ -11,6 +11,9 @@ class Course:
 
     def get_average_grade(self):
         if not self.grades:
-            return 0
+            return -1
         total = sum(grade for _, grade in self.grades)
         return total / len(self.grades)
+
+    def __repr__(self):
+        return self.name

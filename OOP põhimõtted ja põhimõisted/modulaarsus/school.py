@@ -4,13 +4,14 @@ class School:
         self.students = []
         self.courses = []
 
-    def add_student(self, student):
-        if student not in self.students:
-            self.students.append(student)
-
     def add_course(self, course):
         if course not in self.courses:
             self.courses.append(course)
+
+    def add_student(self, student):
+        if student not in self.students:
+            self.students.append(student)
+            student.set_id(len(self.students))  # Assign a unique ID to the student
 
     def add_student_grade(self, student, course, grade):
         if student in self.students and course in self.courses:
